@@ -4,33 +4,31 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
     private CustomSeekBar seekbar;
 
-    private double totalSpan = 100;
     private double redSpan = 0;
     private double greenSpan = 0;
     private double yellowSpan = 0;
-    private double darkGreySpan;
-
-    private ArrayList<ProgressItem> progressItemList;
-    private ProgressItem mProgressItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         seekbar = findViewById(R.id.seekBar0);
-        initDataToSeekbar(70.0);
+        initDataToSeekbar(69);
         seekbar.setEnabled(false);
     }
 
     private void initDataToSeekbar(double a) {
         seekbar.setProgress((int)a);
-        progressItemList = new ArrayList<ProgressItem>();
+        ArrayList<ProgressItem> progressItemList = new ArrayList<>();
         if(a<=(100.0/3))
         {
             redSpan=a;
@@ -46,9 +44,10 @@ public class MainActivity extends Activity {
             yellowSpan=100.0/3;
             greenSpan=a-200.0/3;
         }
-        darkGreySpan=totalSpan-(redSpan+yellowSpan+greenSpan);
+        double totalSpan = 100;
+        double darkGreySpan = totalSpan - (redSpan + yellowSpan + greenSpan);
         // red span
-        mProgressItem = new ProgressItem();
+        ProgressItem mProgressItem = new ProgressItem();
         mProgressItem.progressItemPercentage = (float) ((redSpan / totalSpan) * 100);
         Log.i("Mainactivity", mProgressItem.progressItemPercentage + "");
         mProgressItem.color = R.color.red;

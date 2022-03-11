@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/AndroidStudioProjects/MyApplication2/app/src/main/res/drawable/progress_seek_bar_arrow_down.xml" value="0.11388888888888889" />
+        <entry key="..\:/Users/AndroidStudioProjects/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.1" />
       </map>
     </option>
   </component>
